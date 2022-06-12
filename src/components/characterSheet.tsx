@@ -26,12 +26,16 @@ function CharacterSheet({classType}: { classType: any })
             <CharacterName />
         </Grid>
         <Grid item xs={2}>
-            <h3>Level</h3>
-            <SavedNumberInput saveKey={"characterLevel"} defaultVal={0} />
+            <Stack direction={"row"} spacing={2}>
+                <h3>Level</h3>
+                <SavedNumberInput saveKey={"characterLevel"} defaultVal={0} />
+            </Stack>
         </Grid>
         <Grid item xs={2}>
-            <h3>XP</h3>
-            <SavedNumberInput saveKey={"characterXP"} defaultVal={0} />
+            <Stack direction={"row"} spacing={2}>
+                <h3>XP</h3>
+                <SavedNumberInput saveKey={"characterXP"} defaultVal={0} />
+            </Stack>
         </Grid>
         <Grid item xs={4}>
             <Card>
