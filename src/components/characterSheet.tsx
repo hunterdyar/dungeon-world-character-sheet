@@ -43,7 +43,7 @@ function CharacterSheet({classType}: { classType: any })
             <Card >
                 <Stack spacing={1}>
                     <Card><h2>Armor</h2></Card>
-                    <Card><h2>HP / {maxHP}</h2></Card>
+                    <Card><h2><SavedNumberInput saveKey={"hp"} defaultVal={maxHP} maxValue={maxHP} minValue={0} /> / {maxHP}</h2></Card>
                     <Card><h2>Damage: d{c.damageDice}</h2></Card>
                 </Stack>
             </Card>

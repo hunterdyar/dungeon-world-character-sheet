@@ -2,7 +2,7 @@ import React, {} from "react";
 import {InputBase} from "@mui/material";
 import UseDataHooks from "../hooks/userDataHook";
 
-const characterNameKey = "cName";
+const characterNameKey = "characterName";
 
 function CharacterName()
 {
@@ -12,11 +12,13 @@ function CharacterName()
         setCharacterName(e.target.value)
     }
 
+
+
     return (
         <span>
          <InputBase sx={{ ml: 1, flex: 1,fontSize: "3em"}}
                     placeholder="Character Name"
-                    value = {name} onChange={setName}
+                    value = {name.toString()} onChange={setName}
                     type={"text"}
             />
         </span>

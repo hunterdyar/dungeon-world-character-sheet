@@ -3,8 +3,16 @@ import { useState, useEffect } from "react";
 function getData(key: string, defaultValue: any) {
     // getting stored value
     const saved = localStorage.getItem(key);
+
+    if(saved === "{}"){
+        return defaultValue;
+    }
+
     const initial = JSON.parse(saved == null ? "{}" : saved);
-    return initial || defaultValue;
+    if(initial === {}){
+        return defaultValue;
+    }
+    return initial;
 }
 
 const UseDataHooks = (key: string, defaultValue: any) => {
