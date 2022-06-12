@@ -1,4 +1,4 @@
-import {Card} from "@mui/material";
+import {Card, Container} from "@mui/material";
 import React from "react";
 import SavedNumberInput from "./savedInput";
 
@@ -6,8 +6,10 @@ function BaseStat({stat, changeCallback}: {stat: string, changeCallback?:Functio
 
  return(
      <Card>
-         {statName(stat)}
-         <SavedNumberInput saveKey={stat} defaultVal={10} changeCallback={changeCallback}/>
+         <Container>
+             {statName(stat)}
+             <SavedNumberInput saveKey={stat} defaultVal={10} changeCallback={changeCallback}/>
+         </Container>
     </Card>
  );
 }

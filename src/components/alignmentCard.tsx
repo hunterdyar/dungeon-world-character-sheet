@@ -8,8 +8,10 @@ export default function AlignmentCard()
 {
     return (
         <Card>
+            <Container>
         <h2>Alignment</h2>
         <AlignmentDropdown />
+            </Container>
         </Card>
     );
 }
@@ -24,9 +26,8 @@ function AlignmentDropdown()
         setAlignmentDescription(getAlignmentDesc(e.target.value));
     }
 
-    console.log("render dropdown");
     return(
-        <Container>
+        <span>
         <Select
             fullWidth
             id="demo-simple-select"
@@ -43,7 +44,7 @@ function AlignmentDropdown()
         <SavedCheckbox saveKey={"didAlignment"} defaultValue={false} />
         <p>{alignmentDescription}</p>
             </Stack>
-        </Container>
+        </span>
 );
 }
 
