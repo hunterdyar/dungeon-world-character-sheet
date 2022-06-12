@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/dungeon-world-character-sheet/static/js/main.7bf50c43.js",
+    "static/js/787.80e095ae.chunk.js": "/dungeon-world-character-sheet/static/js/787.80e095ae.chunk.js",
+    "index.html": "/dungeon-world-character-sheet/index.html",
+    "main.7bf50c43.js.map": "/dungeon-world-character-sheet/static/js/main.7bf50c43.js.map",
+    "787.80e095ae.chunk.js.map": "/dungeon-world-character-sheet/static/js/787.80e095ae.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.7bf50c43.js"
+  ]
+}
