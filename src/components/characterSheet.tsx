@@ -1,9 +1,10 @@
 import {Card, Grid, Stack} from "@mui/material";
 import React, {useEffect, useState} from "react";
-import CharacterName from "./CharacterName";
+import CharacterName from "./characterName";
 import SavedNumberInput from "./savedNumberInput";
 import BaseStat from "./skillStat";
 import UseDataHooks from "../hooks/userDataHook";
+import AlignmentCard from "./alignmentCard";
 function CharacterSheet({classType}: { classType: any })
 {
     const [con, setCon] = UseDataHooks("con",10);
@@ -49,11 +50,7 @@ function CharacterSheet({classType}: { classType: any })
             </Card>
         </Grid>
         <Grid item xs={4}>
-            <Card>
-                <h2>
-                    Alignment
-                </h2>
-            </Card>
+            <AlignmentCard />
         </Grid>
 
         <Grid item xs={8} container spacing={2}>
