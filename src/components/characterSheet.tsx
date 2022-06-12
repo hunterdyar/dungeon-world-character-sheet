@@ -1,7 +1,7 @@
 import {Card, Grid, Stack} from "@mui/material";
 import React, {useEffect, useState} from "react";
 import CharacterName from "./characterName";
-import SavedNumberInput from "./savedNumberInput";
+import SavedNumberInput from "./savedInput";
 import BaseStat from "./skillStat";
 import UseDataHooks from "../hooks/userDataHook";
 import AlignmentCard from "./alignmentCard";

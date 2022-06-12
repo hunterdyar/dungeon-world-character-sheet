@@ -1,7 +1,8 @@
-import {Card, MenuItem, Select, SelectChangeEvent} from "@mui/material";
+import {Card, Container, MenuItem, Select, SelectChangeEvent, Stack} from "@mui/material";
 import {default as Alignments} from "../data/alignments.json";
 import UseDataHooks from "../hooks/userDataHook";
 import React, {useState} from "react";
+import {SavedCheckbox} from "./savedInput";
 
 export default function AlignmentCard()
 {
@@ -25,7 +26,7 @@ function AlignmentDropdown()
 
     console.log("render dropdown");
     return(
-        <span>
+        <Container>
         <Select
             fullWidth
             id="demo-simple-select"
@@ -38,12 +39,14 @@ function AlignmentDropdown()
             })}
             <MenuItem value={"custom"}>Custom</MenuItem>
         </Select>
+            <Stack direction={"row"}>
+        <SavedCheckbox saveKey={"didAlignment"} defaultValue={false} />
         <p>{alignmentDescription}</p>
-        </span>
+            </Stack>
+        </Container>
 );
 }
 
-//returns a string
 function getAlignmentDesc(alignmentOption: string): string{
 
     if(alignmentOption ==="custom")

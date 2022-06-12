@@ -1,5 +1,5 @@
 import UseDataHooks from "../hooks/userDataHook";
-import {Input} from "@mui/material";
+import {Checkbox, Input} from "@mui/material";
 import React from "react";
 
 function SavedNumberInput({saveKey, defaultVal, maxValue, minValue, changeCallback}: { saveKey: string, defaultVal: number, maxValue?: number, minValue?: number, changeCallback?: Function})
@@ -28,6 +28,23 @@ function SavedNumberInput({saveKey, defaultVal, maxValue, minValue, changeCallba
         }
     }
     return <Input type={"number"} value={number} onChange={onChange} />
+}
+
+export function SavedCheckbox({saveKey, defaultValue}:{saveKey:string,defaultValue?:boolean}){
+    const [check,setCheck] = UseDataHooks(saveKey,defaultValue);
+    const onChange = (e: React.ChangeEvent<HTMLInputElement>)=>
+    {
+        setCheck(e.target.checked);
+    }
+    return (
+        <div>
+            <Checkbox
+                checked={check}
+                onChange={onChange}
+                sx={{ '& .MuiSvgIcon-root': { fontSize: 28 } }}
+            />
+        </div>
+    );
 }
 
 export default SavedNumberInput;

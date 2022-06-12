@@ -1,6 +1,6 @@
 import {Card} from "@mui/material";
 import React from "react";
-import SavedNumberInput from "./savedNumberInput";
+import SavedNumberInput from "./savedInput";
 
 function BaseStat({stat, changeCallback}: {stat: string, changeCallback?:Function}) {
 
