@@ -1,0 +1,17 @@
+
+  [ {
+      "id": "good",
+      "name": "Good",
+      "desc": "Perform your art to aid someone else."
+    },
+    {
+      "id": "neutral",
+      "name": "Neutral",
+      "desc": "Avoid a conflict or defuse a tense situation."
+    },
+    {
+      "id": "chaotic",
+      "name": "Chaotic",
+      "desc": "Spur others to significant and unplanned decisive action."
+    }
+  ]

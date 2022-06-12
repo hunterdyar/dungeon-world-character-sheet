@@ -1,0 +1,17 @@
+{
+  "barbarian": {
+    "name": "Barbarian",
+    "damageDice": 10,
+    "maxHPMod": 8
+  },
+  "bard": {
+    "name": "Bard",
+    "damageDice": 6,
+    "maxHPMod": 6
+  },
+  "cleric": {
+    "name": "Cleric",
+    "damageDice": 6,
+    "maxHPMod": 8
+  }
+}
