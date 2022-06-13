@@ -102,11 +102,17 @@ function CharacterSheet({classType}: { classType: any })
                 </p>
             </Card>
         </Grid>
-        <Grid item xs={8} >
+        <Grid item xs={8}>
             <Card>
-                <h2>Starting Moves</h2>
-                <MoveSelectionDialog />
+                <Grid container justifyContent={"space-between"}>
+                <Grid item xs={4}>
+                    <h2>Starting Moves</h2>
+                </Grid>
+                <Grid item xs={4}>
+                    <MoveSelectionDialog />
+                </Grid>
                 <MoveList chosenClass={classType} />
+                </Grid>
             </Card>
         </Grid>
         <Grid item xs={4}>

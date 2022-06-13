@@ -51,12 +51,11 @@ export function MoveSelectionDialog() {
                 TransitionComponent={Transition}
                 keepMounted
                 onClose={handleClose}
-                aria-describedby="alert-dialog-slide-description"
             >
                 <DialogTitle>{"Select Moves"}</DialogTitle>
                 <DialogContent>
-                    <DialogContentText id="alert-dialog-slide-description">
-                        Refer to guidebook for which moves are available to your class and level.
+                    <DialogContentText>
+                        <em>Refer to guidebook for which moves are available to your class and level.</em>
                     </DialogContentText>
                     <MoveSelectionList />
                 </DialogContent>
@@ -133,9 +132,10 @@ export function MoveSelectionList() {
         }
     }
 
-    const customList = (items: readonly string[]) => (
+    const customList = (items: readonly string[], listTitle: string) => (
         <Paper sx={{ width: 200, height: 230, overflow: 'auto' }}>
             <List dense component="div" role="list">
+                <ListItemText sx={{fontSize:30, textAlign:"center"}}>{listTitle}</ListItemText>
                 {items.map((value: string) => {
                     const labelId = `transfer-list-item-${value}-label`;
 
@@ -166,7 +166,7 @@ export function MoveSelectionList() {
 
     return (
         <Grid container spacing={2} justifyContent="center" alignItems="center">
-            <Grid item>{customList(left)}</Grid>
+            <Grid item>{customList(left,"All Moves")}</Grid>
             <Grid item>
                 <Grid container direction="column" alignItems="center">
                     <Button
@@ -211,7 +211,7 @@ export function MoveSelectionList() {
                     </Button>
                 </Grid>
             </Grid>
-            <Grid item>{customList(right)}</Grid>
+            <Grid item>{customList(right, "Selected Moves")}</Grid>
         </Grid>
     );
 }
