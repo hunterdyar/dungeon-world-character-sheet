@@ -28,7 +28,7 @@ function CharacterSheet({classType}: { classType: any })
         <Grid item xs={2}>
             <Stack direction={"row"} spacing={2}>
                 <h3>Level</h3>
-                <SavedNumberInput saveKey={"characterLevel"} defaultVal={0} />
+                <SavedNumberInput saveKey={"characterLevel"} defaultVal={0} maxValue={10} minValue={0}/>
             </Stack>
         </Grid>
         <Grid item xs={2}>
@@ -48,7 +48,14 @@ function CharacterSheet({classType}: { classType: any })
             <Card >
                 <Stack spacing={1}>
                     <Card><h2>Armor</h2></Card>
-                    <Card><h2><SavedNumberInput saveKey={"hp"} defaultVal={maxHP} maxValue={maxHP} minValue={0} /> / {maxHP}</h2></Card>
+                    <Card>
+                        <Stack direction={"row"}
+                            justifyContent={"center"}>
+                            <h2>HP</h2>
+                            <SavedNumberInput saveKey={"hp"} defaultVal={maxHP} maxValue={maxHP} minValue={0} />
+                            <h2>/ {maxHP}</h2>
+                        </Stack>
+                        </Card>
                     <Card><h2>Damage: d{c.damageDice}</h2></Card>
                 </Stack>
             </Card>

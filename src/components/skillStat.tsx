@@ -1,14 +1,35 @@
-import {Card, Container} from "@mui/material";
-import React from "react";
+import {Card, Container, Stack} from "@mui/material";
+import React, {useState} from "react";
 import SavedNumberInput from "./savedInput";
-
+import getData from "../hooks/userDataHook";
+import statToModifier from "../hooks/statProcesses";
 function BaseStat({stat, changeCallback}: {stat: string, changeCallback?:Function}) {
 
- return(
+    let val = parseInt(getData(stat,10).toString());//this feels like ive done something wrong.
+    if(isNaN(val))
+    {
+        val = 10;
+    }
+    const [statVal,setStatVal] = useState(val);
+
+    const change = (v: number) =>{
+        if(!isNaN(v)) {
+            setStatVal(v);
+
+            //pass callback along
+            if (changeCallback) {
+                changeCallback(v);
+            }
+        }
+    }
+    return(
      <Card>
          <Container>
              {statName(stat)}
-             <SavedNumberInput saveKey={stat} defaultVal={10} changeCallback={changeCallback}/>
+             <Stack>
+             <SavedNumberInput saveKey={stat} defaultVal={10} changeCallback={change}/>
+                 <h1>{statToModifier(statVal)}</h1>
+             </Stack>
          </Container>
     </Card>
  );
