@@ -5,6 +5,8 @@ import SavedNumberInput from "./savedInput";
 import BaseStat from "./skillStat";
 import UseDataHooks from "../hooks/userDataHook";
 import AlignmentCard from "./alignmentCard";
+import MoveList from "./moveList";
+import {MoveSelectionDialog} from "./moveChooseDialog";
 function CharacterSheet({classType}: { classType: any })
 {
     const [con, setCon] = UseDataHooks("con",10);
@@ -12,8 +14,8 @@ function CharacterSheet({classType}: { classType: any })
 
     //doesn't update when constitution changes.
     useEffect(()=>{
-        setMaxHP(+con+classType.maxHPMod);
-    }, [con, classType.maxHPMod])
+        setMaxHP(+con+classType.baseHP);
+    }, [con, classType.baseHP])
 
     const c = classType;
     return (<Grid container spacing = {2} alignItems={"stretch"}>
@@ -103,6 +105,8 @@ function CharacterSheet({classType}: { classType: any })
         <Grid item xs={8} >
             <Card>
                 <h2>Starting Moves</h2>
+                <MoveSelectionDialog />
+                <MoveList chosenClass={classType} />
             </Card>
         </Grid>
         <Grid item xs={4}>

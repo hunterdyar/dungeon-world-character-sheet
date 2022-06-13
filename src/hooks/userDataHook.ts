@@ -4,11 +4,11 @@ export function getData(key: string, defaultValue: any) {
     // getting stored value
     const saved = localStorage.getItem(key);
 
-    if(saved === "{}"){
+    if(saved === null){
         return defaultValue;
     }
 
-    const initial = JSON.parse(saved == null ? "{}" : saved);
+    const initial = JSON.parse(saved);
     if(initial === {}){
         return defaultValue;
     }

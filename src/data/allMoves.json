@@ -1,0 +1,18 @@
+[
+  {
+    "id": "starting-move",
+    "name": "Starting Move",
+    "desc": "A Description of a move",
+    "class": "barbarian",
+    "availableAt": 0,
+    "special": null
+  },
+  {
+    "id": "two",
+    "name": "Starting Move 2",
+    "desc": "A Description of a move 2",
+    "class": "bard",
+    "availableAt": 0,
+    "special": null
+  }
+]

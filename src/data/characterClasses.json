@@ -2,16 +2,17 @@
   "barbarian": {
     "name": "Barbarian",
     "damageDice": 10,
-    "maxHPMod": 8
+    "baseHP": 8,
+    "defaultMoves": ["starting-move","another-move"]
   },
   "bard": {
     "name": "Bard",
     "damageDice": 6,
-    "maxHPMod": 6
+    "baseHP": 6
   },
   "cleric": {
     "name": "Cleric",
     "damageDice": 6,
-    "maxHPMod": 8
+    "baseHP": 8
   }
 }
