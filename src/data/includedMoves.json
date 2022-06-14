@@ -1,0 +1,10 @@
+[
+  {
+    "id": "included-move",
+    "name": "Included Move",
+    "desc": "A Description of a move",
+    "class": "barbarian",
+    "availableAt": 0,
+    "special": null
+  }
+]

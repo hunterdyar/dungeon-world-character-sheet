@@ -11,6 +11,7 @@ function CharacterSheet({classType}: { classType: any })
 {
     const [con, setCon] = UseDataHooks("con",10);
     const [maxHP, setMaxHP] = useState(0);
+    const [moveListChanged,setMoveListChanged] = useState(true);
 
     //doesn't update when constitution changes.
     useEffect(()=>{
@@ -109,9 +110,9 @@ function CharacterSheet({classType}: { classType: any })
                     <h2>Moves</h2>
                 </Grid>
                 <Grid item xs={4}>
-                    <MoveSelectionDialog />
+                    <MoveSelectionDialog onClose={setMoveListChanged} />
                 </Grid>
-                <MoveList availableAt={0} chosenClass={classType} />
+                    <MoveList availableAt={0} chosenClass={classType} changed={moveListChanged} />
                 </Grid>
             </Card>
         </Grid>

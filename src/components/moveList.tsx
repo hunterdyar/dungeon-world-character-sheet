@@ -6,7 +6,7 @@ import {Grid} from "@mui/material";
 //todo: move keys to file (actually, refactor to use context API)
 export const moveListKey = "moveList";
 
-function MoveList({availableAt = 0, chosenClass}:{availableAt?: number, chosenClass:{defaultMoves:string[]}})
+function MoveList({availableAt = 0, chosenClass, changed}:{availableAt?: number, chosenClass:{defaultMoves:string[]},changed?:boolean})
 {
     const [selectedMoves] = UseDataHooks(moveListKey,chosenClass.defaultMoves);
 

@@ -1,5 +1,5 @@
 import {default as characterClasses} from "./characterClasses.json";
-import {default as allMoves} from "./allMoves.json";
+import {default as includedMoves} from "./includedMoves.json";
 
 function getClassFromID(c:string)
 {
@@ -10,11 +10,24 @@ function getClassFromID(c:string)
     return characterClasses.barbarian;
 }
 
+export var allMoves: any[];
+
 export function allMoveIDs()
 {
-    return allMoves.map(function(m){
-    return m.id;
+    console.log("get all moves");
+    let s = localStorage.getItem("allMoves");
+    if(s !== null)
+    {
+        // s = "includedMoves";
+        allMoves = JSON.parse(s);
+    }else{
+        allMoves = includedMoves;
+    }
+
+    return allMoves.map(function(m:{id:string}){
+        return m.id;
     });
+
 }
 
 export default getClassFromID;

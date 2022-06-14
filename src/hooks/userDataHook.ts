@@ -28,4 +28,10 @@ const UseDataHooks = (key: string, defaultValue: any) => {
     return [value, setValue];
 };
 
+// const allMovesHooks()
+// {
+//     // const [allMoves, setAllMoves] =
+//
+// }
+
 export default UseDataHooks;
