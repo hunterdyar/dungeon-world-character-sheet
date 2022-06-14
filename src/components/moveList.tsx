@@ -6,15 +6,15 @@ import {Grid} from "@mui/material";
 //todo: move keys to file (actually, refactor to use context API)
 export const moveListKey = "moveList";
 
-function MoveList({chosenClass}:{chosenClass:{defaultMoves:string[]}})
+function MoveList({availableAt = 0, chosenClass}:{availableAt?: number, chosenClass:{defaultMoves:string[]}})
 {
     const [selectedMoves] = UseDataHooks(moveListKey,chosenClass.defaultMoves);
 
     // let selectedMoves = chosenClass.defaultMoves;
     const [moves, setMoves] = useState(allMoves.filter(x=>selectedMoves.includes(x.id)));
     useEffect(()=>{
-        setMoves(allMoves.filter(x=>selectedMoves.includes(x.id)));
-    },[selectedMoves]);
+        setMoves(allMoves.filter(x=>selectedMoves.includes(x.id) && x.availableAt >= availableAt));
+    },[availableAt,selectedMoves]);
 
     return(
         <Grid container>
