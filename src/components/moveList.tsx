@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react';
 import UseDataHooks from "../hooks/userDataHook";
 import {default as allMoves} from "../data/allMoves.json";
 import {Grid} from "@mui/material";
+import {Move} from "../data/moveType";
 
 //todo: move keys to file (actually, refactor to use context API)
 export const moveListKey = "moveList";
@@ -10,7 +11,6 @@ function MoveList({availableAt = 0, chosenClass, changed}:{availableAt?: number,
 {
     const [selectedMoves] = UseDataHooks(moveListKey,chosenClass.defaultMoves);
 
-    // let selectedMoves = chosenClass.defaultMoves;
     const [moves, setMoves] = useState(allMoves.filter(x=>selectedMoves.includes(x.id)));
     useEffect(()=>{
         setMoves(allMoves.filter(x=>selectedMoves.includes(x.id) && x.availableAt >= availableAt));
@@ -21,7 +21,7 @@ function MoveList({availableAt = 0, chosenClass, changed}:{availableAt?: number,
             {moves.map((m)=>{
                 return(
                     <Grid item key={m.id}>
-                        <Move move={m}/>
+                        <MoveDisplay move={m as Move}/>
                     </Grid>
                 );
             })}
@@ -30,7 +30,7 @@ function MoveList({availableAt = 0, chosenClass, changed}:{availableAt?: number,
 
 }
 
-function Move({move}:{move: {desc:string, name:string}}){
+function MoveDisplay({move}:{move: Move}){
     return <span>
         <h3>{move.name}</h3>
         <p>{move.desc}</p>
